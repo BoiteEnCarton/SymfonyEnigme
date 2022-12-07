@@ -36,12 +36,12 @@ class ReponseEnigmeUn
         return $this;
     }
 
-    public function getIdEnigme(): ?enigme
+    public function getIdEnigme(): ?Enigme
     {
         return $this->idEnigme;
     }
 
-    public function setIdEnigme(?enigme $idEnigme): self
+    public function setIdEnigme(?Enigme $idEnigme): self
     {
         $this->idEnigme = $idEnigme;
 
