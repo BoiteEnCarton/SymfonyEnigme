@@ -17,7 +17,7 @@ class ReponseEnigmeUn
     private ?string $Reponse = null;
 
     #[ORM\ManyToOne(inversedBy: 'reponseEnigmeUns')]
-    private ?enigme $idEnigme = null;
+    private ?Enigme $idEnigme = null;
 
     public function getId(): ?int
     {
