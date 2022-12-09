@@ -14,27 +14,34 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}
 
-        <nav class="navbar bg-light">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/logoSVG.svg') }}" alt="Bootstrap" width="30" height="24">
-                </a>
-            </div>
-        </nav>
+        <header>
+            <nav class="navbar">
 
+                    <a class="navbar-brand" href="#">
+                        <img class="imageLogo " src="{{ asset('images/LogoSansNom.svg') }}" alt="Logo" height="50px">
+                    </a>
+                    <p class="titreHeader">Enigmatica</p>
 
 
-
-
-
-
-
-
+            </nav>
+        </header>
+        <div class="figure">
+        <img class="imageAssistante" src="{{ asset('images/assistante2.svg') }}" alt="assistante" height="300px">
+        <img class="imageAssistanteIdee" src="{{ asset('images/assistanteIdee.svg') }}" alt="assistante" height="300px">
+        </div>
 
 
 
-        {% endblock %}
+
+
+
+
+
+
+
+
+
+        {% block body %} {% endblock %}
     </body>
 </html>

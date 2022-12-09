@@ -40,11 +40,13 @@ class ReponseEnigmeUnController extends AbstractController
 
 
 
-
+//        checkAnswer(1, $entityManager);
+        
 
         return $this->render('reponse_enigme_un/index.html.twig', [
-//            'controller_name' => 'ReponseEnigmeUnController',
+            'controller_name' => 'ReponseEnigmeUnController',
             'reponseForm' => $form->createView(),
+
         ]);
     }
 }

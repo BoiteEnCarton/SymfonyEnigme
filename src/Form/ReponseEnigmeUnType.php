@@ -14,7 +14,13 @@ class ReponseEnigmeUnType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('Reponse', TextareaType::class);
+            ->add('Reponse', TextareaType::class, [
+                'label' => 'Entrez votre réponse',
+                'attr' => [
+                    'placeholder' => 'Votre réponse',
+                    'class' => 'form-control'
+                ]
+            ]);
 
     }
 
