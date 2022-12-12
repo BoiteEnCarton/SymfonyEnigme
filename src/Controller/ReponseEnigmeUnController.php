@@ -32,8 +32,12 @@ class ReponseEnigmeUnController extends AbstractController
             $entityManager->persist($reponseForm);
             $entityManager->flush();
             $test = $form->getData()->getReponse();
-            $result = checkAnswer(1, $entityManager);
-        }
+            $result = $test==2;
+            if($result){
+                if($this.getUser()->getUserProgressions()!=null){
+
+                }
+            }}
 
         return $this->render('reponse_enigme_un/index.html.twig', [
             'controller_name' => 'ReponseEnigmeUnController',
