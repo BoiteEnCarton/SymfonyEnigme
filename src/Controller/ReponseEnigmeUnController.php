@@ -18,16 +18,12 @@ class ReponseEnigmeUnController extends AbstractController
     #[Route('/reponse/enigme/un', name: 'app_reponse_enigme_un')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
-//        checkAnswer(1, $entityManager);
-//        $reponse = $request->get('answer');
-
+        $result = null;
 
         $matiere = "Maths";
         $reponseForm = new ReponseEnigmeUn();
         $enigmes = $entityManager->getRepository(Enigme::class);
         $reponseForm->setIdEnigme($enigmes->findOneBy(['titre' => $matiere]));
-
-
 
         $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
         $form->handleRequest($request);
@@ -35,18 +31,14 @@ class ReponseEnigmeUnController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($reponseForm);
             $entityManager->flush();
-            return $this->redirectToRoute('app_reponse_enigme_un');
+            $test = $form->getData()->getReponse();
+            $result = checkAnswer(1, $entityManager);
         }
-
-
-
-//        checkAnswer(1, $entityManager);
-        
 
         return $this->render('reponse_enigme_un/index.html.twig', [
             'controller_name' => 'ReponseEnigmeUnController',
             'reponseForm' => $form->createView(),
-
+            'result' => $result,
         ]);
     }
 }
