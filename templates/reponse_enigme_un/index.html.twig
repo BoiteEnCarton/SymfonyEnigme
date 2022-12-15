@@ -22,12 +22,27 @@
     {{ form_row(reponseForm.Reponse) }}
     <button type="submit" class="envoyerBouton">Envoyer</button>
     {{ form_end(reponseForm) }}
-        <div>
-            {% if result == true %}
-                Bien joué
-            {% elseif result == false %}
-                Dommage
-            {% endif %}
-        </div>
+    </div>
+    <div class="resultatEnigme">
+        <style>
+            .resultatEnigme{
+                display:none;
+            }
+            </style>
+        {% if result == true %}
+            <p>Bien joué</p>
+            <style>
+                .resultatEnigme{
+                    display:block;
+                }
+            </style>
+        {% elseif result == false %}
+            <p>Dommage</p>
+            <style>
+                .resultatEnigme{
+                    display:block;
+                }
+            </style>
+        {% endif %}
     </div>
 {% endblock %}

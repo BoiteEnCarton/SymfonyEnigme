@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Enigme;
 use App\Entity\ReponseEnigmeUn;
 use App\Form\ReponseEnigmeUnType;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,16 +30,20 @@ class ReponseEnigmeUnController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $test = $form->getData()->getReponse();
+            $result = $test == 1;
+//            if($result){
+//                if($this.getUser()->getUserProgressions()!=null){
+//
+//                }
+//            }}
             $entityManager->persist($reponseForm);
             $entityManager->flush();
-            $test = $form->getData()->getReponse();
-            $result = $test==2;
-            if($result){
-                if($this.getUser()->getUserProgressions()!=null){
-
-                }
-            }}
-
+            unset($reponseForm);
+            unset($entityManager);
+            $reponseForm = new ReponseEnigmeUn();
+            $reponseForm = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
+        }
         return $this->render('reponse_enigme_un/index.html.twig', [
             'controller_name' => 'ReponseEnigmeUnController',
             'reponseForm' => $form->createView(),

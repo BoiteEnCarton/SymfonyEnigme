@@ -10,3 +10,12 @@ import './styles/app.scss';
 
 // start the Stimulus application
 import './bootstrap';
+
+
+document.getElementById('assistanteIdee').addEventListener('click', function() {
+    indice();
+});
+
+function indice() {
+    alert('Indice : Pensez différemment')
+}
