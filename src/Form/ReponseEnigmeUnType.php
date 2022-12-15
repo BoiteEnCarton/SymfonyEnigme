@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class ReponseEnigmeUnType extends AbstractType
 {
@@ -19,7 +20,13 @@ class ReponseEnigmeUnType extends AbstractType
                 'attr' => [
                     'placeholder' => 'Votre réponse',
                     'class' => 'form-control'
-                ]
+                ],
+                'constraints' => [
+                    new NotBlank([
+                        'message' => 'Veuillez entrer une réponse',
+                    ]),
+
+                ],
             ]);
 
     }

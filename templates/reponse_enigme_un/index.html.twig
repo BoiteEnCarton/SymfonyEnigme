@@ -36,6 +36,13 @@
                     display:block;
                 }
             </style>
+            <!--redirect automatically to route with twig-->
+            <script>
+                setTimeout(function(){
+                    window.location.href = "{{ path('app_wip') }}";
+                }, 3000);
+        </script>
+
         {% elseif result == false %}
             <p>Dommage</p>
             <style>

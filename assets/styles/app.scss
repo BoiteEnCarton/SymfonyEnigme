@@ -38,6 +38,8 @@ $primary: darken(#428bca, 20%);
 }
 body{
     background-color: #303134;
+    height:100vh;
+    width:100vw;
 
     //background-image:url("/public/images/assistante.svg");
     //background-position:bottom right;
@@ -139,5 +141,32 @@ background-color: #999999;
     border: 1px solid #232428;
     //box-shadow: 0 1px 2px #232428;
     //opacity:0;
+    text-align:center;
+}
+body {
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#dvd {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 500px;
+    width: 370px;
+    mask: url("/public/images/plot-chantier.png") no-repeat center;
+    -webkit-mask: url("/public/images/plot-chantier.png") no-repeat center;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: center;
+}
+
+.divWIP{
+    margin: 10vh 25vw;
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #232428;
+    //box-shadow: 0 1px 2px #232428;
     text-align:center;
 }

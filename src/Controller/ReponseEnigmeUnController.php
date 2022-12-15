@@ -39,10 +39,14 @@ class ReponseEnigmeUnController extends AbstractController
 //            }}
             $entityManager->persist($reponseForm);
             $entityManager->flush();
+//            $this->redirectToRoute('app_reponse_enigme_un');
+
+            unset($form);
             unset($reponseForm);
-            unset($entityManager);
             $reponseForm = new ReponseEnigmeUn();
-            $reponseForm = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
+            $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
+            $form->handleRequest($request);
+
         }
         return $this->render('reponse_enigme_un/index.html.twig', [
             'controller_name' => 'ReponseEnigmeUnController',
