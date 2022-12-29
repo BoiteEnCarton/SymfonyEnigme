@@ -19,6 +19,12 @@ class ReponseEnigmeUn
     #[ORM\ManyToOne(inversedBy: 'reponseEnigmeUns')]
     private ?Enigme $idEnigme = null;
 
+//    #[ORM\ManyToOne(inversedBy: 'reponseEnigmeUns')]
+    #[ORM\ManyToOne(inversedBy: 'reponseEnigmeUns')]
+//    #[ORM\JoinColumn(nullable: false)]
+    private ?User $userId = null;
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -47,4 +53,30 @@ class ReponseEnigmeUn
 
         return $this;
     }
+
+//    public function getUserId(): ?User
+//    {
+//        return $this->userId;
+//    }
+//
+//    public function setUserId(?User $userId): self
+//    {
+//        $this->userId = $userId;
+//
+//        return $this;
+//    }
+
+public function getUserId(): ?User
+{
+    return $this->userId;
+}
+
+public function setUserId(?User $userId): self
+{
+    $this->userId = $userId;
+
+    return $this;
+}
+
+
 }

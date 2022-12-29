@@ -20,7 +20,7 @@
 
     {{form_start(reponseForm)}}
     {{ form_row(reponseForm.Reponse) }}
-    <button type="submit" class="envoyerBouton">Envoyer</button>
+{#    <button type="submit" class="envoyerBouton">Envoyer</button>#}
     {{ form_end(reponseForm) }}
     </div>
     <div class="resultatEnigme">
@@ -36,11 +36,22 @@
                     display:block;
                 }
             </style>
-            <!--redirect automatically to route with twig-->
+
             <script>
                 setTimeout(function(){
                     window.location.href = "{{ path('app_wip') }}";
                 }, 3000);
+
+                function bravo(){
+                    let yay = new Audio('assets/yaykids.mp3')
+                    yay.play();
+                    //wait for 5 seconds;
+                    setTimeout(function(){
+                            yay.pause();
+                        }
+                        , 5000);
+                }
+                bravo();
         </script>
 
         {% elseif result == false %}

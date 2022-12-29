@@ -74,3 +74,14 @@ function animate() {
 }
 
 window.requestAnimationFrame(animate);
+
+function bravo(){
+    let yay = new Audio('assets/yaykids.mp3')
+    yay.play();
+    //wait for 5 seconds;
+    setTimeout(function(){
+        yay.pause();
+    }
+    , 5000);
+}
+

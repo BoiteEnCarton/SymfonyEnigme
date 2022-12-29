@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Enigme;
 use App\Entity\ReponseEnigmeUn;
+use App\Entity\UserProgression;
 use App\Form\ReponseEnigmeUnType;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
@@ -24,6 +25,7 @@ class ReponseEnigmeUnController extends AbstractController
         $matiere = "Maths";
         $reponseForm = new ReponseEnigmeUn();
         $enigmes = $entityManager->getRepository(Enigme::class);
+        $userProg = new UserProgression();
         $reponseForm->setIdEnigme($enigmes->findOneBy(['titre' => $matiere]));
 
         $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
@@ -32,6 +34,7 @@ class ReponseEnigmeUnController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $test = $form->getData()->getReponse();
             $result = $test == 1;
+            $userProg->setResultat($result);
 //            if($result){
 //                if($this.getUser()->getUserProgressions()!=null){
 //
