@@ -43,7 +43,7 @@
                 }, 3000);
 
                 function bravo(){
-                    let yay = new Audio('assets/yaykids.mp3')
+                    let yay = new Audio('https://www.myinstants.com/media/sounds/bravo.mp3');
                     yay.play();
                     //wait for 5 seconds;
                     setTimeout(function(){
@@ -56,6 +56,9 @@
 
         {% elseif result == false %}
             <p>Dommage</p>
+            <script>
+                bravo();
+            </script>
             <style>
                 .resultatEnigme{
                     display:block;
