@@ -18,12 +18,8 @@ class UserProgression
     #[ORM\JoinColumn(nullable: false)]
     private ?User $userId = null;
 
-    #[ORM\Id]
-    #[ORM\ManyToOne]
-    private ?Enigme $enigmeId = null;
-
     #[ORM\Column]
-    private ?int $resultat = null;
+    private ?int $progression = null;
 
 
 
@@ -39,26 +35,15 @@ class UserProgression
         return $this;
     }
 
-    public function getEnigmeId(): ?Enigme
+
+    public function getProgression(): ?int
     {
-        return $this->enigmeId;
+        return $this->progression;
     }
 
-    public function setEnigmeId(?Enigme $enigmeId): self
+    public function setProgression(?int $progression): self
     {
-        $this->enigmeId = $enigmeId;
-
-        return $this;
-    }
-
-    public function isResultat(): ?int
-    {
-        return $this->resultat;
-    }
-
-    public function setResultat(int $resultat): self
-    {
-        $this->resultat = $resultat;
+        $this->progression = $progression;
 
         return $this;
     }

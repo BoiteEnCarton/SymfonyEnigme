@@ -25,7 +25,12 @@ class ReponseEnigmeUnController extends AbstractController
         $matiere = "Maths";
         $reponseForm = new ReponseEnigmeUn();
         $enigmes = $entityManager->getRepository(Enigme::class);
-        $userProg = new UserProgression();
+        echo($this->getUser()->getId());
+        $userProg = $entityManager->getRepository(UserProgression::class)->findOneBy(['userId' => $this->getUser()->getId()]);
+        if ($userProg == null) {
+            $userProg = new UserProgression();
+            $userProg->setUserId($this->getUser());
+        }
         $reponseForm->setIdEnigme($enigmes->findOneBy(['titre' => $matiere]));
 
         $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
@@ -33,14 +38,16 @@ class ReponseEnigmeUnController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $test = $form->getData()->getReponse();
-            $result = $test == 1;
-            $userProg->setResultat($result);
+            $result = 1;
+            //$userProg->setResultat($result);
 //            if($result){
 //                if($this.getUser()->getUserProgressions()!=null){
 //
 //                }
 //            }}
+            $userProg->setProgression(1);
             $entityManager->persist($reponseForm);
+            $entityManager->persist($userProg);
             $entityManager->flush();
 //            $this->redirectToRoute('app_reponse_enigme_un');
 
