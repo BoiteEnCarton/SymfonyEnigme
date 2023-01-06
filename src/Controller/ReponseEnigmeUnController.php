@@ -45,7 +45,7 @@ class ReponseEnigmeUnController extends AbstractController
             $entityManager->persist($userProg);
             $entityManager->flush();
             if($test){
-                return $this->redirectToRoute('app_reponse_enigme_deux');
+                return $this->redirectToRoute('app_wip');
             }
 
             unset($form);
