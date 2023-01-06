@@ -25,7 +25,6 @@ class ReponseEnigmeUnController extends AbstractController
         $matiere = "Maths";
         $reponseForm = new ReponseEnigmeUn();
         $enigmes = $entityManager->getRepository(Enigme::class);
-        echo($this->getUser()->getId());
         $userProg = $entityManager->getRepository(UserProgression::class)->findOneBy(['userId' => $this->getUser()->getId()]);
         if ($userProg == null) {
             $userProg = new UserProgression();
@@ -37,27 +36,25 @@ class ReponseEnigmeUnController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $test = $form->getData()->getReponse();
+            $test = $form->getData()->getReponse() == "2";
             $result = 1;
-            //$userProg->setResultat($result);
-//            if($result){
-//                if($this.getUser()->getUserProgressions()!=null){
-//
-//                }
-//            }}
-            $userProg->setProgression(1);
+            if($test){
+                $userProg->setProgression(1);
+            }
             $entityManager->persist($reponseForm);
             $entityManager->persist($userProg);
             $entityManager->flush();
-//            $this->redirectToRoute('app_reponse_enigme_un');
+            if($test){
+                return $this->redirectToRoute('app_reponse_enigme_deux');
+            }
 
             unset($form);
             unset($reponseForm);
             $reponseForm = new ReponseEnigmeUn();
             $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
             $form->handleRequest($request);
-
         }
+
         return $this->render('reponse_enigme_un/index.html.twig', [
             'controller_name' => 'ReponseEnigmeUnController',
             'reponseForm' => $form->createView(),
