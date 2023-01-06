@@ -21,6 +21,11 @@ $primary: darken(#428bca, 20%);
     font-family: nordicFont, sans-serif;
 
 }
+header{
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:0;
+}
 
 .titreEnigme{text-align: center;}
 
@@ -141,6 +146,7 @@ background-color: #999999;
 }
 
 .resultatEnigme{
+    display:none;
     margin: 10vh 25vw;
     //background-color: #50515a;
     background-color: #d9d9d9;
@@ -148,7 +154,7 @@ background-color: #999999;
     padding: 10px;
     border: 1px solid #232428;
     //box-shadow: 0 1px 2px #232428;
-    //opacity:0;
+    opacity:0;
     text-align:center;
 }
 

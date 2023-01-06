@@ -17,7 +17,7 @@ document.getElementById('assistanteIdee').addEventListener('click', function() {
 });
 
 function indice() {
-    alert('Indice : Pensez différemment')
+    alert('Indice : Il n\'est pas précisé dans quelle base. Essayez l\'hexadécimal ou le binaire par exemple.');
 }
 
 
