@@ -21,16 +21,28 @@ $primary: darken(#428bca, 20%);
     font-family: nordicFont, sans-serif;
 
 }
+header{
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:0;
+}
 
 .titreEnigme{text-align: center;}
 
 .enigmeDiv{
+    //width: 50vw;
+    //max-width: 50vw;
+    //min-width: 50vw;
     margin: 10vh 25vw;
     //background-color: #50515a;
     background-color: #d9d9d9;
+    opacity:0;
     border-radius: 10px;
     padding: 10px;
-    box-shadow: 0 1px 2px #232428;
+    //opacity:0;
+    //animation:
+    //box-shadow: 0 1px 2px #232428;
+    animation:fondenigme 2s ease 2000ms forwards;
 }
 .enonceEnigme{
     text-align:center;
@@ -40,6 +52,7 @@ body{
     background-color: #303134;
     height:100vh;
     width:100vw;
+    overflow:hidden;
 
     //background-image:url("/public/images/assistante.svg");
     //background-position:bottom right;
@@ -133,6 +146,7 @@ background-color: #999999;
 }
 
 .resultatEnigme{
+    display:none;
     margin: 10vh 25vw;
     //background-color: #50515a;
     background-color: #d9d9d9;
@@ -140,7 +154,7 @@ background-color: #999999;
     padding: 10px;
     border: 1px solid #232428;
     //box-shadow: 0 1px 2px #232428;
-    //opacity:0;
+    opacity:0;
     text-align:center;
 }
 
@@ -165,4 +179,204 @@ background-color: #999999;
     border: 1px solid #232428;
     //box-shadow: 0 1px 2px #232428;
     text-align:center;
+}
+
+.enonceEnigme span {opacity:0;}
+.titreEnigme span{opacity:0;}
+.lettre1 {animation:letters 2s ease 0000ms forwards;animation-delay:3s;}
+.lettre2 {animation:letters 2s ease 0100ms forwards;animation-delay:3s;}
+.lettre3 {animation:letters 2s ease 0200ms forwards;animation-delay:3s;}
+.lettre4 {animation:letters 2s ease 0300ms forwards;animation-delay:3s;}
+.lettre5 {animation:letters 2s ease 0400ms forwards;animation-delay:3s;}
+.lettre6 {animation:letters 2s ease 0500ms forwards;animation-delay:3s;}
+.lettre7 {animation:letters 2s ease 0600ms forwards;animation-delay:3s;}
+.lettre8 {animation:letters 2s ease 0700ms forwards;animation-delay:3s;}
+.lettre9 {animation:letters 2s ease 0800ms forwards;animation-delay:3s;}
+.lettre10 {animation:letters 2s ease 0900ms forwards;animation-delay:3s;}
+.lettre11 {animation:letters 2s ease 1000ms forwards;animation-delay:3s;}
+.lettre12 {animation:letters 2s ease 1100ms forwards;animation-delay:3s;}
+.lettre13 {animation:letters 2s ease 1200ms forwards;animation-delay:3s;}
+.lettre14 {animation:letters 2s ease 1300ms forwards;animation-delay:3s;}
+.lettre15 {animation:letters 2s ease 1400ms forwards;animation-delay:3s;}
+
+
+@keyframes fondenigme{
+    0%{opacity:0;}
+    100%{opacity:100%;}
+}
+
+@keyframes letters {
+    0% {opacity:0;}
+    100% {opacity:1.0;}
+}
+
+.titreEnigme::after {content:""; display:block; background:linear-gradient(45deg, #F9CFF3,#D4B6DB,#E5D6F2,#C0B6DB,#CFCFF9); height:3px; width:0; opacity:0; margin-top:.2em; animation:lineWidth 3s ease-in-out forwards; animation-delay:3s;}
+@keyframes lineWidth {
+    0% {width:0; opacity:0;}
+    100% {width:100%; opacity:1.0;}
+}
+
+//.enigmeDiv::before{
+//    content:"";
+//    display:block;
+//    background:linear-gradient(45deg, #a4ffdf, #80d1ff, #8dc5fd, #7340ff,#CFCFF9);
+//    height:3px;
+//    width:0%;
+//    opacity:0;
+//    margin-top:.2em;
+//    animation:lineWidth 3s ease-in-out forwards;
+//}
+//.enigmeDiv::after {content:""; display:block; background:linear-gradient(45deg, #a4ffdf, #80d1ff, #8dc5fd, #7340ff,#CFCFF9); height:3px; width:0%; opacity:0; margin-top:.2em; animation:lineWidth 3s ease-in-out forwards;}
+
+.boite{
+    //max-width:fit-content;
+    background-color: #303134;
+    //margin: 0 auto;
+    padding-top:1px;
+    padding-bottom: 1px;
+/* Single pixel data uri image http://jsfiddle.net/LPxrT/ */
+    background-image:
+        url('../../public/images/indexFondEnigme.gif'),
+        url('../../public/images/indexFondEnigme.gif'),
+        url('../../public/images/indexFONDCOULEUR.gif');
+        //url('../../public/images/index4.gif');
+    background-repeat: no-repeat;
+    background-size: 0 2px, 0 100%, 0 2px;
+    background-position: top center, top center, bottom center;
+    -webkit-animation: drawBorderFromCenter 4s;
+}
+@-webkit-keyframes drawBorderFromCenter {
+    0% {
+        background-size: 0 2px, 0 0, 100% 100%;
+    }
+    20% {
+        background-size: 100% 2px, 100% 0, 100% 100%;
+    }
+    66%
+    {
+        background-size: 100% 2px, 100% 98%, 100% 100%;
+    }
+    90%
+    {
+        background-size: 100% 2px, 100% 98%, 0 2px;
+    }
+}
+
+
+
+
+
+//HOMEPAGE
+.main-content {
+    overflow:hidden;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+
+    height: 100vh;
+
+    background: linear-gradient(to right, rgba(36,31,31,1) 0%, rgba(36,31,31,1) 32%, rgba(74,71,70,1) 100%);
+    color: #fff;
+    text-align: center;
+}
+
+.vignette{
+    z-index:1;
+    position:absolute;
+    width:100%; height:100%;
+    box-shadow:inset 0 0 150px 20px black;
+    mix-blend-mode: multiply;
+    -webkit-animation: vignette-anim 3s infinite; /* Safari 4+ */
+    -moz-animation:    vignette-anim 3s infinite; /* Fx 5+ */
+    -o-animation:      vignette-anim 3s infinite; /* Opera 12+ */
+    animation:         vignette-anim 3s infinite; /* IE 10+, Fx 29+ */
+}
+
+.noise {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    //pointer-events: none;
+    opacity: .15;
+}
+
+.line{
+    position:absolute;
+    height:100%; width:1px;
+    opacity:0.1;
+    background-color:#000;
+}
+
+.titleCont{position:relative;}
+
+.main-title {
+    padding: .3em 1em .25em;
+    font-weight: 400;
+    font-size: 40px;
+    color: white;
+    font-family: 'Bellefair', serif;
+    position:relative;
+    line-height:1.3;
+    //white-space:change-color(white,black,0.5);
+    //white-spacing: change-color(white, black, 0.5);
+
+}
+
+.overTitle{
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+.dot{
+    width:3px;
+    height:2px;
+    background-color:white;
+    position:absolute;
+    opacity:0.3;
+}
+
+
+@-webkit-keyframes vignette-anim {
+    0%   , 100%{ opacity: 1; }
+    50% { opacity: 0.7; }
+}
+@-moz-keyframes vignette-anim {
+    0%   , 100%{ opacity: 1; }
+    50% { opacity: 0.7; }
+}
+@-o-keyframes vignette-anim {
+    0%   , 100%{ opacity: 1; }
+    50% { opacity: 0.7; }
+}
+@keyframes vignette-anim {
+    0%   , 100%{ opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.divBtn{
+ z-index:2;
+}
+.btnOui2, .btnNon2, .btnCaché{
+    display:none;
+}
+.btnCaché{
+    position:absolute;
+    top:42%;
+    left:69%;
+    width:5%;
+    height:5%;
+    background-color:transparent;
+    z-index:2;
+    /*cacher le bouton mais cliquer dessus*/
+    opacity: 0;
+
 }

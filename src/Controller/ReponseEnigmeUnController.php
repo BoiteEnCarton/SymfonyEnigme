@@ -17,7 +17,7 @@ use function App\Utils\checkAnswer;
 class ReponseEnigmeUnController extends AbstractController
 {
 
-    #[Route('/reponse/enigme/un', name: 'app_reponse_enigme_un')]
+    #[Route('/maths', name: 'app_reponse_enigme_un')]
     public function index(Request $request, EntityManagerInterface $entityManager): Response
     {
         $result = null;

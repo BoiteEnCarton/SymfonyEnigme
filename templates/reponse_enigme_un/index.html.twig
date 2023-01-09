@@ -9,19 +9,22 @@
 {#    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }#}
 {#    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }#}
 {#</style>#}
+    <div class="boite">
     <div class="enigmeDiv">
 
         <h1 class="titreEnigme">
+{#            <span class="lettre1">M</span><span class="lettre2">a</span><span class="lettre3">t</span><span class="lettre4">h</span><span class="lettre5">é</span><span class="lettre6">m</span><span class="lettre7">a</span><span class="lettre8">t</span><span class="lettre9">i</span><span class="lettre10">q</span><span class="lettre11">u</span><span class="lettre12">e</span><span class="lettre13">s</span>#}
             Mathématiques
         </h1>
         <p class="enonceEnigme">
-            Combien font 1+1 ?
+            <span class="lettre1">C</span><span class="lettre2">o</span><span class="lettre3">m</span><span class="lettre4">b</span><span class="lettre5">i</span><span class="lettre6">e</span><span class="lettre7">n</span> <span class="lettre8">f</span><span class="lettre9">o</span><span class="lettre10">n</span><span class="lettre11">t</span> <span class="lettre12">1</span><span class="lettre13">+</span><span class="lettre14">1</span> <span class="lettre15">?</span>
         </p>
 
     {{form_start(reponseForm)}}
     {{ form_row(reponseForm.Reponse) }}
 {#    <button type="submit" class="envoyerBouton">Envoyer</button>#}
     {{ form_end(reponseForm) }}
+    </div>
     </div>
     <div class="resultatEnigme">
         <style>
@@ -34,6 +37,7 @@
             <style>
                 .resultatEnigme{
                     display:block;
+                    opacity:100%;
                 }
             </style>
 
@@ -62,6 +66,7 @@
             <style>
                 .resultatEnigme{
                     display:block;
+                    opacity:100%;
                 }
             </style>
         {% endif %}
