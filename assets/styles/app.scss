@@ -106,6 +106,7 @@ background-color: #999999;
     object-fit: contain;
     opacity: 0;
     transition:opacity .3s;
+    z-index:2;
 }
 
 //.figure img.imageAssistante{

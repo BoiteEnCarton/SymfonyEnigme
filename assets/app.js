@@ -20,6 +20,15 @@ function indice() {
     alert('Indice : Il n\'est pas précisé dans quelle base. Essayez l\'hexadécimal ou le binaire par exemple.');
 }
 
+function indiceF12(){
+    document.get
+
+
+}
+
+document.getElementById('assistanteIdeeHome').addEventListener('click', function(){
+    indiceF12();
+})
 
 
 
