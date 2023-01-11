@@ -17,7 +17,10 @@ document.getElementById('assistanteIdee').addEventListener('click', function() {
 });
 
 function indice() {
-    alert('Indice : Il n\'est pas précisé dans quelle base. Essayez l\'hexadécimal ou le binaire par exemple.');
+    alert('Indice : Bon ok on ne vous a peut-être pas tout dit.\n' +
+        'Les "1" ne sont pas des nombres et le "+" n\'est pas une addition.\n' +
+        'En booléen il y a deux valeurs, 0 pour faux et 1 pour vrai.\n' +
+        'Le plus est un opérateur logique qui a pour résultat vrai si les deux opérandes sont vrais.');
 }
 
 function indiceF12(){
