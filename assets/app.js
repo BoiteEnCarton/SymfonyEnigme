@@ -24,8 +24,11 @@ function indice() {
 }
 
 function indiceF12(){
-    alert('Vous pouvez appuyer sur F12 et dans l\'onglet élément et cherchez btnCaché.\n +' +
-        'Sinon vous pouvez aussi cherchez le bouton autour du texte en ragardant si le curseur change.\n');
+    alert('Vous pouvez appuyer sur F12 afin d\'afficher le code html du site.\n' +
+        'ici, vous chercherez la balise "<input id="BtnCaché". Une fois que vous l\'aurez trouvé, passez\n' +
+        'la souris sur la balise, et l\'emplacement du bouton vous sera dévoilé.\n \n' +
+        'Indice : Le bouton se trouve dans "body" puis dans "main". Vous chercherez ensuite dans main une "div" avec la classe "divBtn".\n' +
+        'Sinon si vous êtes flemmard.e, vous pouvez aussi cherchez le bouton autour du texte en regardant si le curseur change.\n');
 }
 
 document.getElementById('assistanteIdeeHome').addEventListener('click', function(){
