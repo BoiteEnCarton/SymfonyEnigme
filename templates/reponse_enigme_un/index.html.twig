@@ -32,33 +32,33 @@
                 display:none;
             }
             </style>
+{#        {% if result == false %}#}
+{#            <p>Bien joué</p>#}
+{#            <style>#}
+{#                .resultatEnigme{#}
+{#                    display:block;#}
+{#                    opacity:100%;#}
+{#                }#}
+{#            </style>#}
+
+{#            <script>#}
+{#                setTimeout(function(){#}
+{#                    window.location.href = "{{ path('app_wip') }}";#}
+{#                }, 3000);#}
+
+{#                function bravo(){#}
+{#                    let yay = new Audio('https://www.myinstants.com/media/sounds/bravo.mp3');#}
+{#                    yay.play();#}
+{#                    //wait for 5 seconds;#}
+{#                    setTimeout(function(){#}
+{#                            yay.pause();#}
+{#                        }#}
+{#                        , 5000);#}
+{#                }#}
+{#                bravo();#}
+{#        </script>#}
+
         {% if result == true %}
-            <p>Bien joué</p>
-            <style>
-                .resultatEnigme{
-                    display:block;
-                    opacity:100%;
-                }
-            </style>
-
-            <script>
-                setTimeout(function(){
-                    window.location.href = "{{ path('app_wip') }}";
-                }, 3000);
-
-                function bravo(){
-                    let yay = new Audio('https://www.myinstants.com/media/sounds/bravo.mp3');
-                    yay.play();
-                    //wait for 5 seconds;
-                    setTimeout(function(){
-                            yay.pause();
-                        }
-                        , 5000);
-                }
-                bravo();
-        </script>
-
-        {% elseif result == false %}
             <p>Dommage</p>
             <script>
                 bravo();

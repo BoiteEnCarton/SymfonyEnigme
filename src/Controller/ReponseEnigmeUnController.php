@@ -36,6 +36,8 @@ class ReponseEnigmeUnController extends AbstractController
         $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
         $form->handleRequest($request);
 
+        $result = $form->getData()->getReponse() != "1" && $form->isSubmitted();
+
         if ($form->isSubmitted() && $form->isValid()) {
             $test = $form->getData()->getReponse() == "1";
             if($test){
@@ -52,7 +54,7 @@ class ReponseEnigmeUnController extends AbstractController
             $reponseForm = new ReponseEnigmeUn();
             $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
             $form->handleRequest($request);
-            return $this->redirect($this->generateUrl('app_reponse_enigme_un'));
+            #return $this->redirect($this->generateUrl('app_reponse_enigme_un'));
         }
 
         return $this->render('reponse_enigme_un/index.html.twig', [
