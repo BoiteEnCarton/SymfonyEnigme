@@ -29,6 +29,7 @@ class ReponseEnigmeUnController extends AbstractController
         if ($userProg == null) {
             $userProg = new UserProgression();
             $userProg->setUserId($this->getUser());
+            $userProg->setProgression(0);
         }
         $reponseForm->setIdEnigme($enigmes->findOneBy(['titre' => $matiere]));
 
@@ -36,8 +37,7 @@ class ReponseEnigmeUnController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $test = $form->getData()->getReponse() == "2";
-            $result = 1;
+            $test = $form->getData()->getReponse() == "1";
             if($test){
                 $userProg->setProgression(1);
             }
@@ -47,12 +47,12 @@ class ReponseEnigmeUnController extends AbstractController
             if($test){
                 return $this->redirectToRoute('app_wip');
             }
-
             unset($form);
             unset($reponseForm);
             $reponseForm = new ReponseEnigmeUn();
             $form = $this->createForm(ReponseEnigmeUnType::class, $reponseForm);
             $form->handleRequest($request);
+            return $this->redirect($this->generateUrl('app_reponse_enigme_un'));
         }
 
         return $this->render('reponse_enigme_un/index.html.twig', [
