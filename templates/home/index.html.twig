@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Page d'accueil{% endblock %}
 {% block body %}
     <main role="main" class="main-content" id="main-content">
         <div class="titleCont">
@@ -20,14 +20,29 @@
             var btnOui = document.getElementById('btnOui');
             var btnNon = document.getElementById('btnNon');
             var btnOui2 = document.getElementById('btnOui2');
+            var btnNon2 = document.getElementById('btnNon2');
             var btnCache = document.getElementById('btnCaché');
             btnOui.onclick = function() {
                 document.getElementById('main-title').innerHTML = "<span style='padding-right:-40px'>Bien.</span><br><span style='padding-left:70px'>Es-tu prêt.e</span><br><span style='padding-left:50px'>pour la première</span><br><span style='padding-left:40px'>énigme ?</span>";
                 document.getElementById('btnOui').style.display = "none";
                 document.getElementById('btnNon').style.display = "none";
+                document.getElementById('btnNon2').style.display = "none";
                 document.getElementById('btnOui2').style.display = "inline-block";
+                // document.getElementById('btnOui2').style.pointerEvents = "auto";
+            }
+            btnNon.onclick = function() {
+                document.getElementById('main-title').innerHTML = "<span style='padding-right:-40px'>Vraiment?</span><br><span style='padding-right:40px'>Tu es sûr.e?</span>";
+                document.getElementById('btnOui').style.display = "none";
+                document.getElementById('btnNon').style.display = "none";
                 document.getElementById('btnNon2').style.display = "inline-block";
                 // document.getElementById('btnOui2').style.pointerEvents = "auto";
+            }
+            btnNon2.onclick = function(){
+                document.getElementById('main-title').innerHTML = "<span style='padding-right:-40px'>Bien.</span><br><span style='padding-left:70px'>Es-tu prêt.e</span><br><span style='padding-left:50px'>pour la première</span><br><span style='padding-left:40px'>énigme ?</span>";
+                document.getElementById('btnOui').style.display = "none";
+                document.getElementById('btnNon').style.display = "none";
+                document.getElementById('btnNon2').style.display = "none";
+                document.getElementById('btnOui2').style.display = "inline-block";
             }
             btnOui2.onclick = function(){
                 document.getElementById('main-title').innerHTML = "Trouve le bouton qui te permettra<br> de passer à la suite."
