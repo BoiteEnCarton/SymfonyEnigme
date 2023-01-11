@@ -24,9 +24,8 @@ function indice() {
 }
 
 function indiceF12(){
-    document.get
-
-
+    alert('Vous pouvez appuyer sur F12 et dans l\'onglet élément et cherchez btnCaché.\n +' +
+        'Sinon vous pouvez aussi cherchez le bouton autour du texte en ragardant si le curseur change.\n');
 }
 
 document.getElementById('assistanteIdeeHome').addEventListener('click', function(){
